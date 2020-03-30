@@ -1,0 +1,19 @@
+.answers{
+  &__form {
+    fieldset {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item{
+      margin: 10px;
+      &.right-answer {
+        border: 1px solid green !important;
+        background: green !important;
+      }
+      &.user-answer {
+        border: 1px solid red;
+        background: red;
+      }
+    }
+  }
+}

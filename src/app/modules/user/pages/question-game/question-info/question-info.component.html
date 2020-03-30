@@ -1,0 +1,23 @@
+<h2>Question {{ question.id }}</h2>
+<p>Question: {{ question.question }}</p>
+<div *ngIf="!question.isImageAnswers" class="answers">
+  <h2>Answers:</h2>
+  <form [formGroup]="answersDataForm" class="answers__form" (change)="answerChanged()">
+    <fieldset [disabled]=question.status>
+    <label
+      *ngFor="let answerItem of question.answers"
+      class="answers__form__item"
+      [class.user-answer]="question.userAnswerId === answerItem.id"
+      [class.right-answer]="question.status && question.rightAnswerId === answerItem.id"
+    >
+      <input
+        type="radio"
+        formControlName="answer"
+        [value]="answerItem.id"
+        [checked]="answerItem.id === question.userAnswerId"
+      >
+      {{ answerItem.title }}
+    </label>
+  </fieldset>
+  </form>
+</div>

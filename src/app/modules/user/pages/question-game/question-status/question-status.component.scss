@@ -1,0 +1,11 @@
+.question-status-block {
+  height: 20px;
+  border: 1px solid #000;
+  background: grey;
+  &.success{
+    background: green;
+  }
+  &.wrong {
+    background: red;
+  }
+}

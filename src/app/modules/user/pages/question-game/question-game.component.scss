@@ -1,0 +1,35 @@
+.question-game-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.question {
+  width: 30%;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &__item {
+      width: 33%;
+    }
+  }
+  &__info {
+    background: #f2f2f2;
+    flex-grow: 1;
+  }
+  &__controls {
+    &__btn {
+      width: 100%;
+      height: 40px;
+      background: grey;
+      border: 1px solid black;
+      color: #ff9800;
+      &:hover {
+        background: darken(grey, 15%);
+        cursor: pointer;
+      }
+    }
+  }
+}
