@@ -1,14 +1,15 @@
 <ng-container *ngFor="let question of questionGameService.getQuestions()">
   <div *ngIf="questionGameService.getCurrentQuestionId() === question.id" class="question-game-wrapper">
     <div class="question-content">
-      <div *ngIf="question.isImageAnswers" class="image-answers">
-        <h2>Answers:</h2>
-        <form [formGroup]="answersDataForm" class="answers__form">
-          <input type="radio" formControlName="food" value="beef"> Beef
-          <input type="radio" formControlName="food" value="lamb"> Lamb
-          <input type="radio" formControlName="food" value="fish"> Fish
-        </form>
-      </div>
+      <youtube-player
+        *ngIf="question.isContentVideo"
+        [videoId]="question.questionContentSrc"
+        class="youtube-player"
+        [playerVars]="playerVars"
+        (ready)="savePlayer($event)"
+        (change)="onStateChange($event)"
+      ></youtube-player>
+      <app-question-interactive-content *ngIf="!question.isContentVideo" [question]="question"></app-question-interactive-content>
     </div>
     <div class="question">
       <div class="question__status">

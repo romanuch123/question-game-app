@@ -3,7 +3,7 @@
 <div *ngIf="!question.isImageAnswers" class="answers">
   <h2>Answers:</h2>
   <form [formGroup]="answersDataForm" class="answers__form" (change)="answerChanged()">
-    <fieldset [disabled]=question.status>
+    <fieldset [disabled]="question.status">
     <label
       *ngFor="let answerItem of question.answers"
       class="answers__form__item"

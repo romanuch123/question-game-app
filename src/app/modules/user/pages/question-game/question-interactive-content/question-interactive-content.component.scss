@@ -1,0 +1,48 @@
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+input[type=radio]:checked + label {
+  img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 5px 5px rgb(255, 217, 0);
+    transform: 
+    rotateZ(-10deg) 
+    rotateX(10deg);
+  }
+}
+input[type=radio] + label {
+  margin: 20px;
+  img {
+    border: 1px dashed #444;
+    width: 150px;
+    height: 150px;
+    transition: 500ms all;
+  }
+}
+.answers__form {
+  padding-left: 20px;
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    &.user-answer {
+      img {
+        box-shadow: 0 0 5px 5px red !important;
+      }
+    }
+    &.right-answer {
+      img {
+        box-shadow: 0 0 5px 5px green !important;
+      }
+    }
+  }
+}
+.question-content-interective {
+  width: 80%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}

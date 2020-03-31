@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionGameService } from '../../services/questionGame.service';
 
 @Component({
   selector: 'app-nested-route-loader',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nested-route-loader.component.scss']
 })
 export class NestedRouteLoaderComponent implements OnInit {
-
-  constructor() { }
+  open: boolean = false;
+  constructor(
+    public questionGameService: QuestionGameService,
+  ) { }
 
   ngOnInit() {
   }
-
+  changeQuestion(id: string): void {
+    this.questionGameService.setCurrentQuestionId(id);
+    this.open = false;
+  }
 }

@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-between;
 }
+.question-content {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
 .question {
   width: 30%;
   min-height: calc(100vh - 64px);
@@ -32,4 +38,7 @@
       }
     }
   }
+}
+.youtube-player {
+  width: 100%;
 }

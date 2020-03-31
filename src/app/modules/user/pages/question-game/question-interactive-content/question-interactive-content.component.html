@@ -1,0 +1,37 @@
+<div *ngIf="!question.isImageAnswers" class="question-content-interective">
+  <img [src]="question.questionContentSrc" alt="question interective">
+</div>
+<div *ngIf="question.isImageAnswers" class="image-answers">
+  <h2>Answers:</h2>
+  <form [formGroup]="answersDataForm" class="answers__form" (change)="answerChanged()">
+    <fieldset [disabled]="question.status">
+    <ng-container *ngFor="let answerItem of question.answers">
+      <input 
+        type="radio"
+        [id]="answerItem.id"
+        formControlName="answer"
+        [value]="answerItem.id"
+        [checked]="answerItem.id === question.userAnswerId"
+        class="input-hidden"
+      >
+      <label
+        [for]="answerItem.id"
+        class="answers__form__item"
+        [class.user-answer]="question.userAnswerId === answerItem.id"
+        [class.right-answer]="question.status && question.rightAnswerId === answerItem.id"
+      >
+        <img 
+          src="//placekitten.com/150/150" 
+          alt="I'm sad" />
+      </label>
+    </ng-container>
+    
+  
+
+
+
+
+
+  </fieldset>
+  </form>
+</div>

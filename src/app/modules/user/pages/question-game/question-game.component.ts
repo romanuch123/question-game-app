@@ -10,6 +10,12 @@ import {  FormControl, FormGroup, Validators  } from '@angular/forms';
 })
 export class QuestionGameComponent implements OnInit {
   questions: IQuestion[] = [];
+  player: YT.Player;
+  playerVars = {
+    autoplay: 1,
+    controls: 0,
+    loop: 1,
+  };
   answersDataForm: FormGroup;
   constructor(
     public questionGameService: QuestionGameService,
@@ -33,4 +39,10 @@ export class QuestionGameComponent implements OnInit {
   // nextQuestion() {
   //   this.questionGameService.nextQuestion();
   // }
+
+  savePlayer(player) {
+    this.player = player;
+  }
+  onStateChange(event) {
+  }
 }

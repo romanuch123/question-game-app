@@ -10,7 +10,8 @@ export class QuestionGameService {
       id: '1',
       question: 'First question?',
       isImageAnswers: false,
-      questionContentSrc: '',
+      isContentVideo: false,
+      questionContentSrc: '../../../../../../assets/images/question1.jpg',
       answers: [
         {
           id: '1',
@@ -22,7 +23,7 @@ export class QuestionGameService {
         },
         {
           id: '3',
-          title: 'Lviv',
+          title: 'True',
         },
         {
           id: '4',
@@ -36,7 +37,8 @@ export class QuestionGameService {
     {
       id: '2',
       question: 'Second question?',
-      isImageAnswers: false,
+      isImageAnswers: true,
+      isContentVideo: false,
       questionContentSrc: '',
       answers: [
         {
@@ -49,7 +51,7 @@ export class QuestionGameService {
         },
         {
           id: '3',
-          title: 'Lviv',
+          title: 'True',
         },
         {
           id: '4',
@@ -64,7 +66,8 @@ export class QuestionGameService {
       id: '3',
       question: 'Third question?',
       isImageAnswers: false,
-      questionContentSrc: '',
+      isContentVideo: true,
+      questionContentSrc: 'ChOhcHD8fBA',
       answers: [
         {
           id: '1',
@@ -76,7 +79,7 @@ export class QuestionGameService {
         },
         {
           id: '3',
-          title: 'Lviv',
+          title: 'True',
         },
         {
           id: '4',
@@ -132,5 +135,6 @@ export class QuestionGameService {
         (this.currentQuestionId = questionsWithoutAnswer[currentQuestionIndex + 1].id) :
         (this.currentQuestionId = questionsWithoutAnswer[0].id);
     }
+    this.currentAnswerId = '';
   }
 }
