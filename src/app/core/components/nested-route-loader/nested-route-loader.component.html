@@ -9,7 +9,7 @@
         <li
           *ngFor="let question of questionGameService.getQuestions(); let i=index"
           (click)="changeQuestion(question.id)"
-        >Question {{ index }}</li>
+        >Question {{ i + 1 }}</li>
       </ul>
     </nav>
   </div>
