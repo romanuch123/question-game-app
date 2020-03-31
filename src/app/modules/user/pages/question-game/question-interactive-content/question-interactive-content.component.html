@@ -21,8 +21,8 @@
         [class.right-answer]="question.status && question.rightAnswerId === answerItem.id"
       >
         <img 
-          src="//placekitten.com/150/150" 
-          alt="I'm sad" />
+          [src]="answerItem.title" 
+          alt="Answer" />
       </label>
     </ng-container>
     

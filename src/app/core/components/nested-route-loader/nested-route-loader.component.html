@@ -1,10 +1,10 @@
 <header>
   <div class="menu-container">
-    <button class="menu-btn" (click)="open = !open">
-      <img *ngIf="!open" src="../../../../assets/images/menu.svg" alt="menu">
-      <img *ngIf="open" src="../../../../assets/images/menu_open.svg" alt="menu open">
+    <button class="menu-btn" (click)="open = !open" #menuButton>
+      <img src="../../../../assets/images/menu.svg" alt="menu" [class]="(open ? 'hide' : 'open')">
+      <img src="../../../../assets/images/menu_open.svg" alt="menu open" [class]="(open ? 'show' : 'hide')">
     </button>
-    <nav *ngIf="open">
+    <nav *ngIf="open" appClickOutside (clickOutside)="hideMenu($event)">
       <ul>
         <li
           *ngFor="let question of questionGameService.getQuestions(); let i=index"

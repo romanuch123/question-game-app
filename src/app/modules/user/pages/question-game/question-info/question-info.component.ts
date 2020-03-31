@@ -22,7 +22,6 @@ export class QuestionInfoComponent implements OnInit {
     });
   }
   answerChanged(): void {
-    console.log('changed');
     const answerId: string = this.answersDataForm.value.answer;
     this.questionGameService.setCurrentAnswerId(answerId);
   }

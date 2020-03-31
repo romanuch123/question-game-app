@@ -9,7 +9,6 @@ import {  FormControl, FormGroup, Validators  } from '@angular/forms';
   styleUrls: ['./question-game.component.scss']
 })
 export class QuestionGameComponent implements OnInit {
-  questions: IQuestion[] = [];
   player: YT.Player;
   playerVars = {
     autoplay: 1,
@@ -22,24 +21,10 @@ export class QuestionGameComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.questions = this.questionGameService.getQuestions();
-    console.log(this.questions);
     this.answersDataForm = new FormGroup({
       answer: new FormControl('', Validators.required),
     });
   }
-  // setAnswer(questionId: string): void {
-  //   if (this.answersDataForm.valid) {
-  //     const answerId: string = this.answersDataForm.value.answer;
-  //     this.questionGameService.setAnswer(questionId, answerId);
-  //   } else {
-  //     alert('Choose answer, please!');
-  //   }
-  // }
-  // nextQuestion() {
-  //   this.questionGameService.nextQuestion();
-  // }
-
   savePlayer(player) {
     this.player = player;
   }

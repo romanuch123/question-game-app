@@ -43,19 +43,19 @@ export class QuestionGameService {
       answers: [
         {
           id: '1',
-          title: 'Wrong',
+          title: '../../../../../../assets/images/question2.jpg',
         },
         {
           id: '2',
-          title: 'Wrong',
+          title: '../../../../../../assets/images/question2.jpg',
         },
         {
           id: '3',
-          title: 'True',
+          title: '../../../../../../assets/images/question2.jpg',
         },
         {
           id: '4',
-          title: 'Wrong',
+          title: '../../../../../../assets/images/question2.jpg',
         },
       ],
       rightAnswerId: '3',
@@ -125,7 +125,9 @@ export class QuestionGameService {
     let questionsWithoutAnswer: IQuestion[] = this.questions.filter(el => (el.id === this.currentQuestionId
       || !el.status));
     if (questionsWithoutAnswer.length === 1) {
-      alert('All questions completed!');
+      if (questionsWithoutAnswer[0].status) {
+        alert('All questions completed!');
+      }
     } else if (questionsWithoutAnswer.length === 2) {
       questionsWithoutAnswer = questionsWithoutAnswer.filter(el => el.id !== this.currentQuestionId);
       this.currentQuestionId = questionsWithoutAnswer[0].id;
